@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class practiceQuestion {
     public static void main(String[] args) {
         String str = "Dushyant";
-        String str1 = "";
+        String str1 = "dushyant";
 
         checkAnagrams(str, str1);
     }
