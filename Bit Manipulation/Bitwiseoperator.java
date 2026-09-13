@@ -13,10 +13,25 @@ public class Bitwiseoperator {
         // oddOReven(n);
         // getIthBit(15, 2);
         // System.out.println(setIthBit(10, 2));
-        // System.out.println(clearIthBit(10, 3));
-        // System.out.println(updateIthBit(10, 2, 1));
-        // System.out.println(clearLastIthBit(15, 2));
-        System.out.println(clearRangeOfBits(10, 2, 4));
+        // System.out.println(clearIthBit(10, 1));
+        // System.out.println(updateIthBit(10, 3, 0));
+        // System.out.println(clearLastIthBit(21, 3));
+        // System.out.println(clearRangeOfBits(127, 1, 5));
+        // System.out.println(isPowerOfTwo(15));
+        // System.out.println(countSetBits(65));
+        System.out.println(fastExponentation(2, 7));
+    }
+
+        public static int fastExponentation(int a , int n){
+        int ans = 1;
+        while (n>0) {
+            if((n&1) == 1){
+                ans = ans *a;   
+            }
+            a = a*a;
+            n = n>>1;
+        }
+        return ans;
     }
 
     public static void oddOReven(int n){
@@ -69,5 +84,23 @@ public class Bitwiseoperator {
         int bitmask  = a | b;
         return n & bitmask;
     }
+    public static boolean isPowerOfTwo(int n){
+        return ((n&n-1) == 0);
+    }
+
+    public static int countSetBits(int n){
+        int count = 0;
+        while (n>0) {
+            if((n & 1) == 1){
+                count += 1;
+            }
+            n = n >> 1;
+        }
+        return count;
+    }
+
+
 
 }
+
+
