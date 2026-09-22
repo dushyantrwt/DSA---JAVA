@@ -8,11 +8,11 @@ public class Enheritance {
         p1.setColor("Black");
         System.out.println(p1.getColor());
 
-        // BankAccount myAcc = new BankAccount();
-        // myAcc.name="Riyanshi";
-        // System.out.println(myAcc.name);
-        // myAcc.setPassword("XYZ");
-        // myAcc.showPassword();
+        BankAccount myAcc = new BankAccount();
+        myAcc.name="Riyanshi";
+        System.out.println(myAcc.name);
+        myAcc.setPassword("jbhibv");
+        myAcc.showPassword();
 
     }
 }

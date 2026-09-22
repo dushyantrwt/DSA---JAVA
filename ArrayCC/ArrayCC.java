@@ -4,7 +4,7 @@ package ArrayCC;
 
 public class ArrayCC {
     public static void main(String args[]) {
-        int numbers[] = { -2, -3, -4, -8, -2, -9, -5, -3 };
+        int numbers[] = { -2,3, 4, 8, 2, -9, -5, -3 };
         // Scanner sc = new Scanner(System.in);
         // int key = sc.nextInt();
         // int index = linearSearch(numbers, key);
@@ -36,41 +36,41 @@ public class ArrayCC {
         kedaneMaxSubarraySum(numbers);
     }
 
-    public static void kedaneMaxSubarraySum(int numbers[]) {
-        int currSum = 0;
-        int maxSum = 0;
-        int point = 0;
-        for (int i = 0; i < numbers.length; i++) {
-            if (numbers[i] < 0) {
-                point++;
-            }
-        }
+    // public static void kedaneMaxSubarraySum(int numbers[]) {
+    // int currSum = 0;
+    // int maxSum = 0;
+    // int point = 0;
+    // for (int i = 0; i < numbers.length; i++) {
+    // if (numbers[i] < 0) {
+    // point++;
+    // }
+    // }
 
-        if (numbers.length == point) {
-            PrifixMaxSubarraySum(numbers);
-        } else {
-            for (int i = 0; i < numbers.length; i++) {
-                currSum = currSum < 0 ? currSum = 0 : currSum + numbers[i];
-                maxSum = Math.max(currSum, maxSum);
-            }
-            System.out.println("Maximum subarray is : " + maxSum);
-        }
+    // if (numbers.length == point) {
+    // PrifixMaxSubarraySum(numbers);
+    // } else {
+    // for (int i = 0; i < numbers.length; i++) {
+    // currSum = currSum < 0 ? currSum = 0 : currSum + numbers[i];
+    // maxSum = Math.max(currSum, maxSum);
+    // }
+    // System.out.println("Maximum subarray is : " + maxSum);
+    // }
 
-    }
+    // }
 
     // This is most optimal code for finding max subarray sum but in case if all the
     // elements in array is negative than it give max equal to 0 instead of minimum
     // negative number
 
-    // public static void kedaneMaxSubarraySum(int numbers[]){
-    // int currSum = 0;
-    // int maxSum = 0;
-    // for(int i = 0; i<numbers.length; i++){
-    // currSum = currSum < 0 ? currSum = 0: currSum + numbers[i];
-    // maxSum = Math.max(currSum,maxSum);
-    // }
-    // System.out.println("Maximum subarray is : " + maxSum);
-    // }
+    public static void kedaneMaxSubarraySum(int numbers[]) {
+        int currSum = 0;
+        int maxSum = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            currSum = currSum < 0 ? currSum = 0 : currSum + numbers[i];
+            maxSum = Math.max(currSum, maxSum);
+        }
+        System.out.println("Maximum subarray is : " + maxSum);
+    }
 
     public static void PrifixMaxSubarraySum(int numbers[]) {
         int currSum = 0;
