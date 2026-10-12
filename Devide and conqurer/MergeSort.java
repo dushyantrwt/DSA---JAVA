@@ -105,7 +105,7 @@ public class MergeSort {
             arr[i] = temp[k];
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) { 
         int arr[] = {6,3,9,5,2,8};
         mergeSort(arr, 0, arr.length-1);
         printArr(arr);
